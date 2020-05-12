@@ -19,7 +19,7 @@
 //   /\bErlang\b/
 // ]
 
-const techs = {
+export const techs = {
   rust: {
     label: 'Rust',
     regex: /\b(Rust)\b/i
