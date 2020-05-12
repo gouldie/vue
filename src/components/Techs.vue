@@ -1,16 +1,28 @@
 <template>
   <div>
-    <p-check v-for="(tech, index) in techs" :key="tech.name" class="p-default p-curve" name="check" color="success" v-model="techs[index].checked">{{ tech.label }}</p-check>
+    <!-- <p-check v-for="(tech, index) in techs" :key="tech.name" class="p-default p-curve" name="check" color="success" v-model="techs[index].checked">{{ tech.label }}</p-check> -->
+    <p-check 
+      v-for="(tech, index) in techs" 
+      :key="tech.name" 
+      class="p-default p-curve" 
+      color="success" 
+      v-on:change='emit(index)'
+      checked='tech.checked'
+    >
+      {{ tech.label }}
+    </p-check>
   </div>
 </template>
 
 <script>
-import { techs } from '../utils'
 
 export default {
-  data: function() {
-    return {
-      techs: Object.keys(techs).map(t => ({ name: t, label: techs[t].label, checked: true }))
+  props: [
+    'techs'
+  ],
+  methods: {
+    emit(index) {
+      this.$emit('checked', index)
     }
   }
 }

@@ -4,10 +4,26 @@ import { jobStats } from '../utils'
 import { Line } from 'vue-chartjs'
 import randomcolor from 'randomcolor'
 
-const techs = ['react', 'rust']
-
 export default {
   extends: Line,
+  props: [
+    'techs'
+  ],
+  watch: {
+    techs: function() {
+      const newData = this.formatData(data)
+
+      this.labels = newData.labels
+      this.datasets = newData.datasets
+
+      this.renderChart({
+        labels: this.labels,
+        datasets: this.datasets
+      }, {
+        maintainAspectRatio: false
+      })
+    }
+  },
   data: function() {
     return {
       labels: this.formatData(data).labels,
@@ -22,10 +38,10 @@ export default {
         formattedData[key] = jobStats(data[key].html)
       })
 
-      const datasets = techs.map(e => ({ id: e, data: [], fill: false, borderColor: randomcolor() }))
+      const datasets = this.techs.map(e => ({ id: e, data: [], fill: false, borderColor: randomcolor() }))
 
       Object.keys(formattedData).forEach(m => {
-        techs.forEach(t => {
+        this.techs.forEach(t => {
           const count = formattedData[m][t].count
           const label = formattedData[m][t].label
 
@@ -57,6 +73,9 @@ export default {
     }, {
       maintainAspectRatio: false
     })
+  },
+  updated() {
+    console.log('updated')
   }
 }
 </script>
