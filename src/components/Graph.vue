@@ -1,0 +1,62 @@
+<script>
+import data from '../data'
+import { jobStats } from '../utils'
+import { Line } from 'vue-chartjs'
+import randomcolor from 'randomcolor'
+
+const techs = ['react', 'rust']
+
+export default {
+  extends: Line,
+  data: function() {
+    return {
+      labels: this.formatData(data).labels,
+      datasets: this.formatData(data).datasets
+    }
+  },
+  methods: {
+    formatData(data) {
+      const formattedData = {}
+
+      Object.keys(data).forEach(key => {
+        formattedData[key] = jobStats(data[key].html)
+      })
+
+      const datasets = techs.map(e => ({ id: e, data: [], fill: false, borderColor: randomcolor() }))
+
+      Object.keys(formattedData).forEach(m => {
+        techs.forEach(t => {
+          const count = formattedData[m][t].count
+          const label = formattedData[m][t].label
+
+          const index = datasets.indexOf(datasets.find(e => e.id === t))
+
+          datasets[index].label = label
+          datasets[index].data.push(count)
+        })
+      })
+
+      return {
+        labels: Object.keys(formattedData),
+        datasets
+      }
+    }
+  },
+  mounted () {
+    this.addPlugin({
+      beforeInit: function(chart) {
+        chart.legend.afterFit = function() {
+          this.height += 20
+        }
+      }
+    })
+    // Overwriting base render method with actual data.
+    this.renderChart({
+      labels: this.labels,
+      datasets: this.datasets
+    }, {
+      maintainAspectRatio: false
+    })
+  }
+}
+</script>

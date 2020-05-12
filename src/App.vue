@@ -1,17 +1,23 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <h1>HackerNews Tech Trends</h1>
+    <Techs />
+    <div style='width: 70%; margin: 50px auto;'>
+      <Graph />
+    </div>
+    
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Graph from './components/Graph.vue'
+import Techs from './components/Techs.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    Graph,
+    Techs
   }
 }
 </script>
