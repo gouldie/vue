@@ -1,3 +1,5 @@
+import {default as Mar19} from './Mar19';
+import {default as Apr19} from './Apr19';
 import {default as May19} from './May19';
 import {default as Jun19} from './Jun19';
 import {default as Jul19} from './Jul19';
@@ -13,6 +15,8 @@ import {default as Apr20} from './Apr20';
 
 
 export default {
+  'Mar 19': Mar19,
+  'Apr 19': Apr19,
   'May 19': May19,
   'Jun 19': Jun19,
   'Jul 19': Jul19,
