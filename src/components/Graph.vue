@@ -11,14 +11,13 @@ export default {
   ],
   watch: {
     techs: function() {
-      const newData = this.formatData(data)
+      const datasets = this.data.datasets.filter(e => this.techs.includes(e.id))
 
-      // labels don't change (yet) so no need to set this.labels
-      this.datasets = newData.datasets
+      // labels don't change (yet) so no need to set new labels
 
       this.renderChart({
-        labels: this.labels,
-        datasets: this.datasets
+        labels: this.data.labels,
+        datasets
       }, {
         maintainAspectRatio: false,
         scales: {
@@ -41,8 +40,7 @@ export default {
   },
   data: function() {
     return {
-      labels: this.formatData(data).labels,
-      datasets: this.formatData(data).datasets
+      data: this.formatData(data)
     }
   },
   methods: {
@@ -83,8 +81,7 @@ export default {
     })
     // Overwriting base render method with actual data.
     this.renderChart({
-      labels: this.labels,
-      datasets: this.datasets
+      ...this.data
     }, {
       maintainAspectRatio: false,
       scales: {
