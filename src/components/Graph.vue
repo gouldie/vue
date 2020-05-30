@@ -13,7 +13,7 @@ export default {
     techs: function() {
       const newData = this.formatData(data)
 
-      this.labels = newData.labels
+      // labels don't change (yet) so no need to set this.labels
       this.datasets = newData.datasets
 
       this.renderChart({
@@ -35,7 +35,7 @@ export default {
       const formattedData = {}
 
       Object.keys(data).forEach(key => {
-        formattedData[key] = jobStats(data[key].html)
+        formattedData[key] = jobStats(data[key])
       })
 
       const datasets = this.techs.map(e => ({ id: e, data: [], fill: false, borderColor: randomcolor() }))

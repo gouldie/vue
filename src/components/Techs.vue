@@ -7,7 +7,7 @@
       class="p-default p-curve" 
       color="success" 
       v-on:change='emit(index)'
-      checked='tech.checked'
+      :checked='tech.checked'
     >
       {{ tech.label }}
     </p-check>

@@ -1,6 +1,4 @@
-export default {
-  date: new Date('01/01/2020'),
-  html: `<html lang="en" op="item">
+export default `<html lang="en" op="item">
 
 <head>
 	<meta name="referrer" content="origin">
@@ -8272,4 +8270,3 @@ At Textio, we&#x27;re changing the way people write. We predict how your writing
 <script type='text/javascript' src='hn.js?MGXlBh5TEwlHPCII6lkM'></script>
 
 </html>`
-}

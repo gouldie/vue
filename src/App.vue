@@ -3,7 +3,7 @@
     <h1>HackerNews Tech Trends</h1>
     <Techs @checked='toggleTech' :techs='techs' />
     <div style='width: 70%; margin: 50px auto;'>
-      <Graph :techs='techs.filter(e => e.checked).map(e => e.name)' />
+      <Graph :techs='generateTechs' />
     </div>
     
   </div>
@@ -22,12 +22,24 @@ export default {
   },
   data: function() {
     return {
-      techs: Object.keys(techs).map(t => ({ name: t, label: techs[t].label, checked: true }))
+      techs: Object.keys(techs).map(t => ({ name: t, label: techs[t].label, checked: false }))
     }
   },
   methods: {
     toggleTech(index) {
       this.techs[index].checked = !this.techs[index].checked
+    }
+  },
+  computed: {
+    // if all techs are unchecked (default) we display all
+    generateTechs() {
+      const checked = this.techs.filter(e => e.checked)
+
+      if (checked.length <= 0) {
+        return this.techs.map(e => e.name)
+      } else {
+        return checked.map(e => e.name)
+      }
     }
   }
 }

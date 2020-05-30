@@ -27,9 +27,14 @@ export const techs = {
   react: {
     label: 'React',
     regex: /\b(React|ReactJS)\b/i
+  },
+  java: {
+    label: 'Java',
+    regex: /\b(Java)\b/i
   }
 }
 
+// only counts top level comments. max 1 count per top level comment
 export const jobStats = (htmlString) => {
   const htmlObject = document.createElement('div')
   htmlObject.innerHTML = htmlString
