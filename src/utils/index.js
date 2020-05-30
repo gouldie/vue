@@ -31,6 +31,10 @@ export const techs = {
   java: {
     label: 'Java',
     regex: /\b(Java)\b/i
+  },
+  vue: {
+    label: 'Vue',
+    regex: /\b(Vue|VueJS)\b/i
   }
 }
 
