@@ -20,7 +20,22 @@ export default {
         labels: this.labels,
         datasets: this.datasets
       }, {
-        maintainAspectRatio: false
+        maintainAspectRatio: false,
+        scales: {
+          yAxes: [{
+            ticks: {
+              beginAtZero: true
+            },
+            gridLines: {
+              display: false
+            }
+          }],
+          xAxes: [ {
+            gridLines: {
+              display: true
+            },
+          }]
+        }
       })
     }
   },
@@ -71,7 +86,17 @@ export default {
       labels: this.labels,
       datasets: this.datasets
     }, {
-      maintainAspectRatio: false
+      maintainAspectRatio: false,
+      scales: {
+        yAxes: [{
+          ticks: {
+            beginAtZero: true
+          },
+          gridLines: {
+            display: false
+          }
+        }]
+      }
     })
   },
   updated() {
