@@ -9,7 +9,7 @@
 //   /\b(PHP|PHP5|PHP7)\b/i,
 //   /\b(JS|JavaScript)\b/i,
 //   /\b(React|ReactJS)\b/i,
-//   /\b(Angular|Angular5|Angular6)\b/i,
+//   /\b(Angular|Angular5|Angular6|Angular7)\b/i,
 //   /\b(Vue|VueJS)\b/i,
 //   /\b(Node|NodeJS)\b/i,
 //   /\b(Go|GO|Golang|golang|GOLANG)\b/,
@@ -35,6 +35,22 @@ export const techs = {
   vue: {
     label: 'Vue',
     regex: /\b(Vue|VueJS)\b/i
+  },
+  angular: {
+    label: 'Angular',
+    regex: /\b(Angular|Angular5|Angular6|Angular7|AngularJS)\b/i
+  },
+  python: {
+    label: 'Python',
+    regex: /\b(Python)\b/i
+  },
+  javascript: {
+    label: 'JavaScript',
+    regex: /\b(JS|JavaScript)\b/i
+  },
+  node: {
+    label: 'NodeJS',
+    regex: /\b(Node|NodeJS)\b/i
   }
 }
 

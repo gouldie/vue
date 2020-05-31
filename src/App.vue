@@ -2,10 +2,11 @@
   <div id="app">
     <h1>HackerNews Tech Trends</h1>
     <Techs @checked='toggleTech' :techs='techs' />
-    <div style='width: 70%; margin: 50px auto;'>
+    <div class="graph-container">
       <Graph :techs='generateTechs' />
     </div>
-    
+    <p style='text-decoration: underline; margin-bottom: 8px;'>How is this graph calculated?</p>
+    <p style='margin-top: 8px;'>Data comes from the first page of each 'Who is hiring?' HackerNews thread every month. Each top-level comment is searched for matching technologies.</p>
   </div>
 </template>
 
@@ -53,5 +54,24 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+.graph-container {
+  width: 70%;
+  margin: 50px auto;
+}
+
+@media screen and (max-width: 1000px) {
+  .graph-container {
+    width: 85%;
+    margin: 40px auto;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .graph-container {
+    width: 95%;
+    margin: 30px auto;
+  }
 }
 </style>
