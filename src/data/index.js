@@ -1,3 +1,10 @@
+import {default as Jan18} from './Jan18';
+import {default as Feb18} from './Feb18';
+import {default as Mar18} from './Mar18';
+import {default as Apr18} from './Apr18';
+import {default as May18} from './May18';
+import {default as Jun18} from './Jun18';
+import {default as Jul18} from './Jul18';
 import {default as Aug18} from './Aug18';
 import {default as Sep18} from './Sep18';
 import {default as Oct18} from './Oct18';
@@ -23,6 +30,13 @@ import {default as May20} from './May20';
 
 
 export default {
+  'Jan 18': Jan18,
+  'Feb 18': Feb18,
+  'Mar 18': Mar18,
+  'Apr 18': Apr18,
+  'May 18': May18,
+  'Jun 18': Jun18,
+  'Jul 18': Jul18,
   'Aug 18': Aug18,
   'Sep 18': Sep18,
   'Oct 18': Oct18,
