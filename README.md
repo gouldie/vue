@@ -8,7 +8,7 @@ Data comes from the first page of each 'Who is hiring?' HackerNews thread every 
 
 Deployed to https://gouldie.github.io/hackernews/
 
-Built with VueJS
+Built with Vue.js
 
 ## Installing <a name = "installing"></a>
 
