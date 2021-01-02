@@ -1,7 +1,7 @@
 import { Jan17, Feb17, Mar17, Apr17, May17, Jun17, Jul17, Aug17, Sep17, Oct17, Nov17, Dec17 } from './2017'
 import { Jan18, Feb18, Mar18, Apr18, May18, Jun18, Jul18, Aug18, Sep18, Oct18, Nov18, Dec18 } from './2018'
 import { Jan19, Feb19, Mar19, Apr19, May19, Jun19, Jul19, Aug19, Sep19, Oct19, Nov19, Dec19 } from './2019'
-import { Jan20, Feb20, Mar20, Apr20, May20, Jun20, Jul20 } from './2020'
+import { Jan20, Feb20, Mar20, Apr20, May20, Jun20, Jul20, Aug20, Sep20, Oct20, Nov20, Dec20 } from './2020'
 
 
 
@@ -48,5 +48,10 @@ export default {
   'Apr 20': Apr20,
   'May 20': May20,
   'Jun 20': Jun20,
-  'Jul 20': Jul20
+  'Jul 20': Jul20,
+  'Aug 20': Aug20,
+  'Sep 20': Sep20,
+  'Oct 20': Oct20,
+  'Nov 20': Nov20,
+  'Dec 20': Dec20
 }
