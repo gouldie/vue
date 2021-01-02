@@ -12,6 +12,8 @@ Built with Vue.js
 
 ## Installing <a name = "installing"></a>
 
+Node version used: 14.8.0
+
 ```
 npm install
 npm run serve
